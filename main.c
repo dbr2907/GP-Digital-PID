@@ -1,3 +1,10 @@
+/*This work is licensed under a
+Creative Commons Attribution-NonCommmercial-ShareAlike 4.0 International
+
+This license lets others remix, tweak, and build upon this work non-commercially,
+as long as they credit the AUTHOR and license their new creations under the identical terms.
+*/
+
 /*
 Ivan Rene Morales Argueta (2014)
 ivan[at]fisica[dot]usac[dot]edu[dot]gt
@@ -38,7 +45,7 @@ volatile uint32_t Load;
 volatile uint32_t PWMClock;
 volatile uint32_t DutyC1;
 ///-----------------Control-----------------//
-volatile uint32_t SensorVar;
+volatile uint32_t SensorVariable;
 /************************************PID*********************************************************/
 
 //**********************Inicialización*************************//
@@ -121,7 +128,7 @@ void main(void){
     while(1){
         PWMPulseWidthSet(PWM1_BASE, PWM_OUT_0, Load*DutyC1/100);
 
-        DutyC1 = (unsigned int)PIDUpdate(SensorVar);
+        DutyC1 = (unsigned int)PIDUpdate(SensorVariable);
     }
 }
 
